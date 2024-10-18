@@ -52,7 +52,7 @@ model.fit(X_train, y_train)
 # Faire des prédictions avec le modèle chargé
 y_pred = model.predict(X_test)
 single=X_test.iloc[0]
-print(model.predict(single.reshape(1, -1)))
+#print(model.predict(single.reshape(1, -1)))
 # Évaluation des performances
 mse = mean_squared_error(y_test, y_pred)
 r2 = r2_score(y_test, y_pred)
@@ -62,6 +62,6 @@ print(f"MSE : {mse}")
 print(f"R² : {r2}")
 
 # Enregistrer le modèle dans le Model Store de BentoML
-#model_ref = bentoml.sklearn.save_model("admission_rd", model)
+model_ref = bentoml.sklearn.save_model("admission_rd", model)
 
 print(f"Modèle enregistré sous : {model_ref}")
