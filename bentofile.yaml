@@ -1,0 +1,19 @@
+service: "src.service:rd_service"
+description: "Ridge Classifier regression lineaire Service for predicting admission"
+labels:
+  owner: "Pinel.A"
+  project: "Admissions Prediction"
+  description: "Predict the chance of admission of a student in a university"
+include:
+  - "src/"
+  - "data/"
+  - "'*.py'"
+python:
+  packages:
+    - "numpy"
+    - "pandas"
+    - "scikit-learn"
+    - "bentoml"
+    - "pydantic"
+    - "requests"
+    - "pyjwt"
